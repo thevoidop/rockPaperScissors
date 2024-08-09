@@ -1,7 +1,14 @@
+/* Reset margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added for better box-sizing behavior */
+}
+
+/* Base styles */
+body {
     text-align: center;
+    font-family: Arial, sans-serif; /* Added for better typography */
 }
 
 h1 {
@@ -11,6 +18,7 @@ h1 {
     line-height: 8rem;
 }
 
+/* Choice buttons */
 .choice {
     height: 165px;
     width: 165px;
@@ -18,6 +26,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0.5rem; /* Added margin for better spacing on small screens */
 }
 
 .choice:hover {
@@ -32,14 +41,17 @@ img {
     border-radius: 50%;
 }
 
+/* Container for choices */
 .choices {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-top: 5rem;
+    flex-wrap: wrap; /* Allows choices to wrap on smaller screens */
 }
 
+/* Scoreboard styling */
 .scoreBoard {
     display: flex;
     justify-content: center;
@@ -49,11 +61,13 @@ img {
     gap: 5rem;
 }
 
+/* Individual score styling */
 #userScore,
 #computerScore {
     font-size: 4rem;
 }
 
+/* Message container */
 .msgContainer {
     margin-top: 5rem;
 }
@@ -61,9 +75,106 @@ img {
 #msg {
     background-color: #020122;
     color: #f2f3ae;
-    margin-top: 5rem;
     font-size: 2rem;
     display: inline;
     padding: 1rem;
     border-radius: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 6rem;
+    }
+
+    .choice {
+        height: 140px;
+        width: 140px;
+    }
+
+    img {
+        height: 130px;
+        width: 130px;
+    }
+
+    .scoreBoard {
+        gap: 2rem;
+    }
+
+    #userScore,
+    #computerScore {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 5rem;
+    }
+
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
+
+    img {
+        height: 110px;
+        width: 110px;
+    }
+
+    .choices {
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .scoreBoard {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #userScore,
+    #computerScore {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        line-height: 4rem;
+    }
+
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .choices {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .scoreBoard {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #userScore,
+    #computerScore {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
 }
